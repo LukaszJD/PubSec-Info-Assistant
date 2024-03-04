@@ -62,6 +62,7 @@ ENV = {
     "AZURE_BLOB_STORAGE_ENDPOINT": None,
     "IS_GOV_CLOUD_DEPLOYMENT": None
 }
+str_to_bool = {'true': True, 'false': False}
 
 for key, value in ENV.items():
     new_value = os.getenv(key)
@@ -72,7 +73,7 @@ for key, value in ENV.items():
     
 search_creds = AzureKeyCredential(ENV["AZURE_SEARCH_SERVICE_KEY"])
 
-if ENV["IS_GOV_CLOUD_DEPLOYMENT"]:
+if str_to_bool.get(ENV["IS_GOV_CLOUD_DEPLOYMENT"]):
     openai.api_base = "https://" + ENV["AZURE_OPENAI_SERVICE"] + ".openai.azure.us/"
 else:
     openai.api_base = "https://" + ENV["AZURE_OPENAI_SERVICE"] + ".openai.azure.com/"
