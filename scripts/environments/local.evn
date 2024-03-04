@@ -5,8 +5,8 @@
 # This is set by the Azure Pipeline for other environments.
 export LOCATION="francecentral" # Required
 export WORKSPACE="publicsecworkspace" # Required
-export SUBSCRIPTION_ID="6ac1c197-fd8b-47f1-a50b-8af7529031bc" # Required
-export TENANT_ID="832b0908-3585-4294-a01c-7763fc195006" # Required
+export SUBSCRIPTION_ID="" # Required
+export TENANT_ID="" # Required
 export IS_USGOV_DEPLOYMENT=false # Required
 
 # Use this setting to determine whether a user needs to be granted explicit access to the website via an
